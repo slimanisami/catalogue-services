@@ -26,10 +26,10 @@ public class CatalogueServicesApplication {
 	return args -> {
 
 		categoryRepository.deleteAll();
-		Stream.of("Ordinateur","Imprimente").forEach(c->{
+		Stream.of("C1 Ordinateur","C2 Imprimente").forEach(c->{
 
 
-		categoryRepository.save(new Category("C1",c,new ArrayList<>()));
+		categoryRepository.save(new Category(c.split(" ")[0],c.split(" ")[1],new ArrayList<>()));
 
 		});
 		categoryRepository.findAll().forEach(System.out::println);
